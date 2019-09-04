@@ -12,7 +12,7 @@ export class Validations {
 
 
     // Constructeur
-    constructor(objetJSON: JSON){
+    constructor(){
 
         document.querySelector('form').noValidate = true;
         /* var requestURL = './assets/js/objMessages.json';
