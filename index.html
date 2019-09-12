@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <title>Coeur Atout - Jouer la carte romantique</title>
   <meta name="viewport" content="width=device-width"/>
-  <!--<link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>-->
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
 
 </head>
 <body>
@@ -17,9 +17,134 @@
 
   <main>
     <h1>Inscription</h1>
-<form>
-</form>
-    <!-- FORMULAIRE À CRÉER-->
+    <form class="formulaire">
+
+      <!-- MON GENRE -->
+      <fieldset class="formulaire__genre">
+        <legend>1. Mon genre</legend>
+        <fieldset class="formulaire__genre__monGenre">
+          <legend>Je suis : </legend>
+          <div class="jesuis_genre">
+            <label for="jesuis_homme">
+              Homme
+              <input class="sexe_jesuis champ" type="radio" value="homme" id="jesuis_homme" name="jesuis_genre"/>
+            </label>
+            <label for="jesuis_femme">
+              Femme
+              <input class="sexe_jesuis champ" type="radio" value="femme" id="jesuis_femme" name="jesuis_genre"/>
+            </label>
+            <label for="jesuis_autre">
+              Autre identite de genre
+              <input class="sexe_jesuis champ" type="radio" value="autre" id="jesuis_autre" name="jesuis_genre"/>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="formulaire__genre__recherche">
+          <legend>Je cherche : </legend>
+          <div class="jecherche_genre">
+            <label for="jecherche_homme">
+              Homme
+              <input class="sexe_jecherche champ" type="radio" value="homme" id="jecherche_homme" name="jecherche_genre">
+            </label>
+            <label for="jecherche_femme">
+              Femme
+              <input class="sexe_jecherche champ" type="radio" value="femme" id="jecherche_femme" name="jecherche_genre">
+            </label>
+            <label for="jecherche_autre">
+              Autre identite de genre
+              <input class="sexe_jecherche champ" type="radio" value="autre" id="jecherche_autre" name="jecherche_genre">
+            </label>
+          </div>
+        </fieldset>
+      </fieldset>
+
+      <!-- MON PROFIL -->
+      <fieldset class="formulaire__profil">
+        <legend>2. Mon profil</legend>
+        <fieldset class="formulaire__dateNaissance">
+          <legend>Ma date de naissance: (JJ-MM-AAAA)</legend>
+          <div class="date_naissance dateNaissance">
+            <label for="date_naissance__jour">
+              Jour
+              <input class="dateNaissance__jour champ" type="number" max="31" id="date_naissance__jour" required>
+            </label>
+            <label for="date_naissance__mois">
+              Mois
+              <select class="dateNaissance__mois champ" name="date_naissance__mois" id="date_naissance__mois" required>
+                <option value="01">Janvier</option>
+                <option value="02">Fevrier</option>
+                <option value="03">Mars</option>
+                <option value="04">Avril</option>
+                <option value=05>Mai</option>
+                <option value="06">Juin</option>
+                <option value="07">Janvier</option>
+                <option value="08">Aout</option>
+                <option value="09">Septembre</option>
+                <option value="10">Octobre</option>
+                <option value="11">Novembre</option>
+                <option value="12">Decembre</option>
+              </select>
+            </label>
+            <label for="date_naissance__annee">
+              Annee
+              <input class="dateNaissance__annee champ" type="number" max="2019" id="date_naissance__annee" required>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="formulaire__codePostal">
+          <legend>Mon code postal : (A1A 1A1)</legend>
+          <div class="code_postal">
+            <label for="code_postal">
+              Code postal
+              <input class="codePostal champ" type="text" id="code_postal" required pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]
+              ">
+            </label>
+          </div>
+        </fieldset>
+      </fieldset>
+
+      <!-- MON COMPTE -->
+      <fieldset class="formulaire__compte">
+        <legend>3. Mon compte</legend>
+        <div class="formulaire__compte__pseudo">
+          <label for="pseudo">
+            Mon nom ou pseudo :
+            <input class="pseudo champ" type="text" id="pseudo" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
+          </label>
+        </div>
+        <div class="formulaire__compte__courriel">
+          <label for="courriel" aria-describedby="desc_courriel">
+            Mon courriel :
+            <input class="courriel champ" type="email" id="courriel" required>
+            <small id="desc_courriel">Votre courriel de sera pas devoile</small>
+          </label>
+        </div>
+        <div class="formulaire__compte__motPasse">
+          <label for="mot_de_passe" aria-labelledby="desc_motPasse">
+            Mot de passe
+            <input class="motDePasse champ" type="password" id="mot_de_passe" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
+            ">
+            <small id="desc_motPasse">Entre 6 et 10 caractères, lettres minuscule et majuscule et chiffre obligatoire.</small>
+          </label>
+        </div>
+        <div class="formulaire__compte__afficherMdp">
+          <label for="afficher_mdp">
+            <input class="basculeTypeMotDePasse champ" type="checkbox" id="afficher_mdp">
+            Afficher le mot de passe
+          </label>
+        </div>
+        <div class="formulaire__compte__conditions">
+          <label for="conditions">
+            <input class="termesUtilisation champ" type="checkbox" id="conditions" required>
+            J'ai lu et j'accepte les conditions d'utilisation et la politique de confidentialité du réseau Cœur Atout.
+          </label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="bouton bouton_soumission">M'inscrire</button>
+
+    </form>
+  <!-- FORMULAIRE À CRÉER-->
 
   </main>
 
@@ -41,6 +166,7 @@
 
   <!-- On importe toutes les classes de l'application et on instancie l'application dans app.js. -->
   <script src="./node_modules/requirejs/require.js" data-main="assets/js/app.js"></script>
+  <script src="assets/js/app.js"></script>
 
 </body>
 </html>

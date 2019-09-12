@@ -1,6 +1,10 @@
 /**
- *
+ * @author: Olivier Papineau
+ * @email: olivier.12.papineau@gmail.com
  */
+import { IEtatFormulaire } from './typages/interfaces';
+import { initialiserEtat } from "./utilitaires/initialiserEtat";
+
 export class Validations {
 
     // ATTRIBUTS
@@ -8,30 +12,72 @@ export class Validations {
 
     // -- Éléments de formulaire à valider
     // Étape 1
-    private refarrJeSuis: Array<HTMLElement> = Array.apply(null, document.querySelectorAll('[name=jeSuis]'));
+    private refarrJeSuis: HTMLElement[] = Array.apply(null, document.querySelectorAll('[name=jesuis_genre]'));
+    private refArrElements: HTMLInputElement[] = Array.apply(null, document.querySelectorAll('.champ'));
 
-
+    private etatFormulaire = initialiserEtat();
     // Constructeur
-    constructor(){
+    constructor(objJSON?: JSON) {
 
         document.querySelector('form').noValidate = true;
-        /* var requestURL = './assets/js/objMessages.json';
-         var request = new XMLHttpRequest();
-         request.open('GET', requestURL);
-         request.responseType = 'json';
-         request.send();
-
-         request.onload = function() {
-             var objMessages = request.response;
-         }
-         this.objMessages=objMessages;*/
+        fetch('./assets/objMessages.json')
+            .then(response => response.json())
+            .then(response => {
+                this.objMessages = response;
+                this.initialiser();
+            });
     }
 
+    //Initialisation des ecouteurs d'evenements
+    private initialiser = (): void => {
+        this.refarrJeSuis.forEach(element => {
+           element.addEventListener("blur", this.valider);
+        });
+
+        // Ajout d'ecouteurs d'evenements par type de champ
+        this.refArrElements.forEach(element => {
+           element.addEventListener("blur", this.valider);
+           if (
+               element.type === "text" ||
+               element.type === "number" ||
+               element.type === "email" ||
+               element.type === "password") {
+               element.addEventListener("keyup", this.controlerChamp);
+               element.addEventListener("change", this.controlerChamp);
+           }
+           if (element.type === "radio") {
+               element.addEventListener("click", this.controlerChamp);
+           }
+           if (element.name === "date_naissance__mois") {
+               element.addEventListener("change", this.controlerChamp);
+           }
+        });
+        console.table(this.objMessages);
+    };
+
     // Méthodes de validation
+    private valider = (e) => {
+        console.log(e.currentTarget);
+        console.log(e.currentTarget.pattern);
+    };
 
 
     // Méthodes utilitaires
-
+    private controlerChamp = (e): void => {
+        // Creation d'un object memorisant les valeurs des champs
+        console.log(e.currentTarget.className);
+        this.etatFormulaire = {
+            ...this.etatFormulaire,
+            champs: {
+                ...this.etatFormulaire.champs,
+                [e.currentTarget.classList[0]]: {
+                    ...[e.currentTarget.classList[0]],
+                    valeur: e.currentTarget.value,
+                }
+            },
+        };
+        console.log(this.etatFormulaire.champs[e.currentTarget.classList[0]]);
+    };
 
 
 }
