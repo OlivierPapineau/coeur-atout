@@ -57,8 +57,20 @@ export class Validations {
 
     // Méthodes de validation
     private valider = (e) => {
-        console.log(e.currentTarget);
-        console.log(e.currentTarget.pattern);
+        let copieEtat = {...this.etatFormulaire};
+        console.log("copieEtat: ", copieEtat);
+        //console.log(e.currentTarget);
+        //console.log(e.currentTarget.pattern);
+        const regexChamp = new RegExp(e.currentTarget.pattern);
+        console.log("regex: ", regexChamp);
+
+        if (!e.currentTarget.value.match(regexChamp)) {
+            copieEtat.champs[e.currentTarget.classList[0]].estValide = false;
+            console.log(copieEtat.champs[e.currentTarget.classList[0]]);
+        } else {
+            copieEtat.champs[e.currentTarget.classList[0]].estValide = true;
+            console.log(copieEtat.champs[e.currentTarget.classList[0]]);
+        }
     };
 
 

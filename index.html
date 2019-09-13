@@ -96,8 +96,7 @@
           <div class="code_postal">
             <label for="code_postal">
               Code postal
-              <input class="codePostal champ" type="text" id="code_postal" required pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]
-              ">
+              <input class="codePostal champ" type="text" id="code_postal" required pattern="^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$">
             </label>
           </div>
         </fieldset>
@@ -122,7 +121,7 @@
         <div class="formulaire__compte__motPasse">
           <label for="mot_de_passe" aria-labelledby="desc_motPasse">
             Mot de passe
-            <input class="motDePasse champ" type="password" id="mot_de_passe" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
+            <input class="motDePasse champ" type="password" id="mot_de_passe" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})
             ">
             <small id="desc_motPasse">Entre 6 et 10 caractères, lettres minuscule et majuscule et chiffre obligatoire.</small>
           </label>
