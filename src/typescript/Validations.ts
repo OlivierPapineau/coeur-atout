@@ -65,10 +65,24 @@ export class Validations {
         console.log("regex: ", regexChamp);
 
         if (!e.currentTarget.value.match(regexChamp)) {
+            //Si le champ est invalide, change le state pour invalide
             copieEtat.champs[e.currentTarget.classList[0]].estValide = false;
+
+            //Met la classe invalide au champ
+            e.currentTarget.classList.add("invalide");
             console.log(copieEtat.champs[e.currentTarget.classList[0]]);
         } else {
+            //Si le champ est valide, change le state pour valide
             copieEtat.champs[e.currentTarget.classList[0]].estValide = true;
+
+            //Si le champ contient la classe invalide, l'enleve
+            if (e.currentTarget.classList.contains("invalide")) {
+                e.currentTarget.classList.remove("invalide");
+            }
+
+            //Met la classe valide au champ
+            e.currentTarget.classList.add("valide");
+
             console.log(copieEtat.champs[e.currentTarget.classList[0]]);
         }
     };
