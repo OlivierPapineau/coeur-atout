@@ -55,10 +55,15 @@ export class Validations {
         console.table(this.objMessages);
     };
 
+    /*
+    * @TODO Faire un clean up des e.currentTarget + faire fonctionner la suppression des messages d'erreur
+    * */
     // Méthodes de validation
     private valider = (e) => {
         let copieEtat = {...this.etatFormulaire};
-        console.log("copieEtat: ", copieEtat);
+        const elementValidation = document.createElement("P");
+
+        //console.log("copieEtat: ", copieEtat);
         //console.log(e.currentTarget);
         //console.log(e.currentTarget.pattern);
         const regexChamp = new RegExp(e.currentTarget.pattern);
@@ -70,6 +75,11 @@ export class Validations {
 
             //Met la classe invalide au champ
             e.currentTarget.classList.add("invalide");
+
+            //Chargement du message de validation
+            elementValidation.innerHTML = this.objMessages[e.currentTarget.classList[0]].erreurs.motif;
+            elementValidation.classList.add("messageInvalide");
+            e.currentTarget.parentNode.parentNode.appendChild(elementValidation);
             console.log(copieEtat.champs[e.currentTarget.classList[0]]);
         } else {
             //Si le champ est valide, change le state pour valide
@@ -82,6 +92,9 @@ export class Validations {
 
             //Met la classe valide au champ
             e.currentTarget.classList.add("valide");
+
+            e.currentTarget.parentNode.parentNode.removeChild(elementValidation); //A fixer
+            console.log("Parent node:", e.currentTarget.parentNode.parentNode);
 
             console.log(copieEtat.champs[e.currentTarget.classList[0]]);
         }
