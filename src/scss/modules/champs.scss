@@ -1,4 +1,8 @@
+.champ {
+  display: block;
+}
 
+/*** JS ***/
 .valide {
   border: green solid 1px;
 }
@@ -9,4 +13,48 @@
 
 .messageInvalide {
   color: red;
+}
+
+/*** GENERAL ***/
+
+.groupe_radio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.champ_seul {
+  label {
+    display: block;
+    text-align: center;
+    input {
+      width: 100%;
+      margin: 10px 0 20px 0;
+    }
+  }
+}
+
+.conteneurChamp {
+  &__champ {
+    border-radius: 50px;
+    border: black solid 1px;
+    padding: 15px 0 15px 10px;
+    max-width: 100%;
+  }
+}
+
+.groupe_date {
+  &__champ {
+    label {
+      display: block;
+      text-align: center;
+      input {
+        width: 100%;
+        margin: 10px 0 20px 0;
+      }
+      select {
+        width: 100%;
+        margin: 10px 0 20px 0;
+      }
+    }
+  }
 }

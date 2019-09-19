@@ -20,108 +20,115 @@
     <form class="formulaire">
 
       <!-- MON GENRE -->
-      <fieldset class="formulaire__genre">
-        <legend>1. Mon genre</legend>
-        <fieldset class="formulaire__genre__monGenre">
+      <fieldset class="formulaire__genre section_formulaire">
+        <legend class="formulaire__titre">Mon genre</legend>
+        <fieldset class="formulaire__genre__monGenre sous_section_formulaire">
           <legend>Je suis : </legend>
-          <div class="jesuis_genre">
+          <div class="jesuis_genre groupe_radio">
             <label for="jesuis_homme">
-              Homme
               <input class="sexe_jesuis champ" type="radio" value="homme" id="jesuis_homme" name="jesuis_genre"/>
+              Homme
             </label>
             <label for="jesuis_femme">
-              Femme
               <input class="sexe_jesuis champ" type="radio" value="femme" id="jesuis_femme" name="jesuis_genre"/>
+              Femme
             </label>
             <label for="jesuis_autre">
-              Autre identite de genre
               <input class="sexe_jesuis champ" type="radio" value="autre" id="jesuis_autre" name="jesuis_genre"/>
+              Autre identite de genre
             </label>
           </div>
         </fieldset>
-        <fieldset class="formulaire__genre__recherche">
+        <fieldset class="formulaire__genre__recherche sous_section_formulaire">
           <legend>Je cherche : </legend>
-          <div class="jecherche_genre">
+          <div class="jecherche_genre groupe_radio">
             <label for="jecherche_homme">
-              Homme
               <input class="sexe_jecherche champ" type="radio" value="homme" id="jecherche_homme" name="jecherche_genre">
+              Homme
             </label>
             <label for="jecherche_femme">
-              Femme
               <input class="sexe_jecherche champ" type="radio" value="femme" id="jecherche_femme" name="jecherche_genre">
+              Femme
             </label>
             <label for="jecherche_autre">
-              Autre identite de genre
               <input class="sexe_jecherche champ" type="radio" value="autre" id="jecherche_autre" name="jecherche_genre">
+              Autre identite de genre
             </label>
           </div>
         </fieldset>
       </fieldset>
 
       <!-- MON PROFIL -->
-      <fieldset class="formulaire__profil">
-        <legend>2. Mon profil</legend>
-        <fieldset class="formulaire__dateNaissance">
+      <fieldset class="formulaire__profil section_formulaire">
+        <legend class="formulaire__titre">Mon profil</legend>
+        <fieldset class="formulaire__dateNaissance sous_section_formulaire groupe_date">
           <legend>Ma date de naissance: (JJ-MM-AAAA)</legend>
           <div class="date_naissance dateNaissance">
-            <label for="date_naissance__jour">
-              Jour
-              <input class="dateNaissance__jour champ" type="number" max="31" id="date_naissance__jour" required>
-            </label>
-            <label for="date_naissance__mois">
-              Mois
-              <select class="dateNaissance__mois champ" name="date_naissance__mois" id="date_naissance__mois" required>
-                <option value="01">Janvier</option>
-                <option value="02">Fevrier</option>
-                <option value="03">Mars</option>
-                <option value="04">Avril</option>
-                <option value=05>Mai</option>
-                <option value="06">Juin</option>
-                <option value="07">Janvier</option>
-                <option value="08">Aout</option>
-                <option value="09">Septembre</option>
-                <option value="10">Octobre</option>
-                <option value="11">Novembre</option>
-                <option value="12">Decembre</option>
-              </select>
-            </label>
-            <label for="date_naissance__annee">
-              Annee
-              <input class="dateNaissance__annee champ" type="number" max="2019" id="date_naissance__annee" required>
-            </label>
+            <div class="groupe_date__champ conteneurChamp">
+              <label for="date_naissance__jour">
+                Jour
+                <input class="dateNaissance__jour champ conteneurChamp__champ" type="number" max="31" id="date_naissance__jour" required>
+              </label>
+            </div>
+            <div class="groupe_date__champ conteneurChamp">
+              <label for="date_naissance__mois">
+                Mois
+                <select class="dateNaissance__mois champ conteneurChamp__champ" name="date_naissance__mois" id="date_naissance__mois" required>
+                  <option value="01">Janvier</option>
+                  <option value="02">Fevrier</option>
+                  <option value="03">Mars</option>
+                  <option value="04">Avril</option>
+                  <option value=05>Mai</option>
+                  <option value="06">Juin</option>
+                  <option value="07">Janvier</option>
+                  <option value="08">Aout</option>
+                  <option value="09">Septembre</option>
+                  <option value="10">Octobre</option>
+                  <option value="11">Novembre</option>
+                  <option value="12">Decembre</option>
+                </select>
+              </label>
+            </div>
+            <div class="groupe_date__champ conteneurChamp">
+              <label for="date_naissance__annee">
+                Annee
+                <input class="dateNaissance__annee champ conteneurChamp__champ" type="number" max="2019" id="date_naissance__annee" required>
+              </label>
+            </div>
+
           </div>
         </fieldset>
-        <fieldset class="formulaire__codePostal">
+        <fieldset class="formulaire__codePostal sous_section_formulaire">
           <legend>Mon code postal : (A1A 1A1)</legend>
-          <div class="code_postal">
+          <div class="code_postal champ_seul conteneurChamp">
             <label for="code_postal">
               Code postal
-              <input class="codePostal champ" type="text" id="code_postal" required pattern="^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$">
+              <input class="codePostal champ conteneurChamp__champ" type="text" id="code_postal" required pattern="^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$">
             </label>
           </div>
         </fieldset>
       </fieldset>
 
       <!-- MON COMPTE -->
-      <fieldset class="formulaire__compte">
-        <legend>3. Mon compte</legend>
-        <div class="formulaire__compte__pseudo">
+      <fieldset class="formulaire__compte section_formulaire">
+        <legend class="formulaire__titre">Mon compte</legend>
+        <div class="formulaire__compte__pseudo champ_seul conteneurChamp">
           <label for="pseudo">
             Mon nom ou pseudo :
-            <input class="pseudo champ" type="text" id="pseudo" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
+            <input class="pseudo champ conteneurChamp__champ" type="text" id="pseudo" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
           </label>
         </div>
-        <div class="formulaire__compte__courriel">
+        <div class="formulaire__compte__courriel champ_seul conteneurChamp">
           <label for="courriel" aria-describedby="desc_courriel">
             Mon courriel :
-            <input class="courriel champ" type="email" id="courriel" required>
+            <input class="courriel champ conteneurChamp__champ" type="email" id="courriel" required>
             <small id="desc_courriel">Votre courriel de sera pas devoile</small>
           </label>
         </div>
-        <div class="formulaire__compte__motPasse">
+        <div class="formulaire__compte__motPasse champ_seul conteneurChamp">
           <label for="mot_de_passe" aria-labelledby="desc_motPasse">
             Mot de passe
-            <input class="motDePasse champ" type="password" id="mot_de_passe" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})
+            <input class="motDePasse champ conteneurChamp__champ" type="password" id="mot_de_passe" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})
             ">
             <small id="desc_motPasse">Entre 6 et 10 caractères, lettres minuscule et majuscule et chiffre obligatoire.</small>
           </label>

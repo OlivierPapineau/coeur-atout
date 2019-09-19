@@ -22,5 +22,8 @@
     "normalize.scss": "^0.1.0",
     "requirejs": "^2.3.6",
     "susy": "^3.0.5"
+  },
+  "repository": {
+    "private": true
   }
 }

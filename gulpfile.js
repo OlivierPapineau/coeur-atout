@@ -25,7 +25,12 @@ function watch(cb) {
             /*  Pour le PHP on utilise un proxy
             *   Remplacer le USER et le NOMPROJET
             *  genre "localhost/~etu01/rpni3/rpni3-crs2/" */
-            proxy: "http://localhost:8888/AUTOMNE%202019/RPNI3/EXERCICES/TP1_coeur_atout/01_travail/coeur-atout/"
+
+            //DOIT SUPPRIMER NODE_MODULES POUR CHANGER DE PLATEFORME
+            //Macos
+            //proxy: "http://localhost:8888/AUTOMNE%202019/RPNI3/EXERCICES/TP1_coeur_atout/01_travail/coeur-atout/"
+            //Windows
+            proxy: "http://localhost/AUTOMNE%202019/RPNI3/EXERCICES/TP1_coeur_atout/01_travail/coeur-atout/"
         });
     });
 
