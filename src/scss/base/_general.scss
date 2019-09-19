@@ -1,3 +1,44 @@
 body {
-  background: url("../../../assets/images/background.jpg") no-repeat 0 0;
+  background: url("../images/background.jpg") no-repeat center;
+}
+
+header {
+  margin: 20px auto 20px auto;
+  display: block;
+  width: 95%;
+
+  @media (min-width: $tablettePortrait) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.conteneur {
+  width: 100%;
+  margin-top: 60px;
+  @media (min-width: $tablettePortrait) {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+.titre {
+  color: $rose;
+  display: block;
+  width: 92%;
+  margin: 0 auto;
+
+  @media (min-width: $tablettePortrait) {
+    width: 100%;
+  }
+}
+
+.logo {
+  width: 209px;
+  height: 49px;
+
+  @media (min-width: $tablettePortrait) {
+    width: 234px;
+    height: 55px;
+  }
 }

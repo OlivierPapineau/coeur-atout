@@ -24,17 +24,21 @@ $policeCorps: Times, serif;
 /** Palette de couleurs **/
 // Au besoin utiliser http://chir.ag/projects/name-that-color pour nommer les couleurs
 
-$bleuPale: #68A8E8;
-$vertLime: #BBD531;
-$bleuMinuit: #012D61;
-$bleuMarin: #2678B5;
-$noir: #000;
-$blanc: #fff;
+//$bleuPale: #68A8E8;
+//$vertLime: #BBD531;
+//$bleuMinuit: #012D61;
+//$bleuMarin: #2678B5;
+//$noir: #000;
+//$blanc: #fff;
+$rose: #ED7198;
+$orange: #F08F6A;
+$degrade: linear-gradient(90deg, #F08F6A 0%, #ED7198 100.13%);
+$gris: #4B4B4B;
 
-$dominante: $bleuMinuit;
-$secondaire: $vertLime;
-$texte:$noir;
-$texteInverse:$blanc;
+//$dominante: $bleuMinuit;
+//$secondaire: $vertLime;
+//$texte:$noir;
+//$texteInverse:$blanc;
 
 
 /** Points de rupture **/

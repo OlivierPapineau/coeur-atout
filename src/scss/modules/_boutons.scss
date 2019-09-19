@@ -10,3 +10,42 @@
   display: block;
   margin: 0 auto;
 }
+
+.bouton_inscription {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 50px;
+  border: solid 2px $rose;
+  color: $rose;
+  background-color: transparent;
+  transition: background-color .5s ease,
+              color .5s ease,
+              border .5s ease;
+
+  &:hover {
+    background-color: $rose;
+    color: white;
+    border: none;
+  }
+
+  &:active {
+    border: solid 2px $rose;
+    color: $rose;
+    background-color: transparent;
+  }
+
+  &:visited {
+    border: solid 2px $rose;
+    color: $rose;
+    background-color: transparent;
+  }
+
+  @media (min-width: $tablettePortrait) {
+    display: inline;
+    width: 235px;
+    height: 55px;
+    margin-top: 0;
+  }
+}

@@ -11,48 +11,60 @@
 <body>
 
   <header>
-    <p class="h1">Coeur Atout</p>
-    <p>Jouer la carte romantique</p>
+<!--    <p class="h1">Coeur Atout</p>-->
+    <img class="logo" src="assets/images/logo_coeuratout_mini.svg" alt="Coeur Atout - Jouer la carte romantique">
+<!--    <p>Jouer la carte romantique</p>-->
+    <button class="bouton_inscription" type="button">S'INSCRIRE</button>
   </header>
 
-  <main>
-    <h1>Inscription</h1>
+  <main class="conteneur">
+    <h1 class="titre">INSCRIPTION</h1>
     <form class="formulaire">
-
+      <div class="formulaire__etapes">
+        <div class="formulaire__etapes__bulle bulle-active">
+          <span class="formulaire__etapes__monGenre">1. MON GENRE</span>
+        </div>
+        <div class="formulaire__etapes__bulle">
+          <span class="formulaire__etapes__monProfil">2. MON PROFIL</span>
+        </div>
+        <div class="formulaire__etapes__bulle">
+          <span class="formulaire__etapes__monCompte">3. MON COMPTE</span>
+        </div>
+      </div>
       <!-- MON GENRE -->
       <fieldset class="formulaire__genre section_formulaire">
-        <legend class="formulaire__titre">Mon genre</legend>
+        <legend class="h2 formulaire__titre">Mon genre</legend>
         <fieldset class="formulaire__genre__monGenre sous_section_formulaire">
-          <legend>Je suis : </legend>
+          <legend class="formulaire__soustitre">Je suis</legend>
           <div class="jesuis_genre groupe_radio">
             <label for="jesuis_homme">
               <input class="sexe_jesuis champ" type="radio" value="homme" id="jesuis_homme" name="jesuis_genre"/>
-              Homme
+              HOMME
             </label>
             <label for="jesuis_femme">
               <input class="sexe_jesuis champ" type="radio" value="femme" id="jesuis_femme" name="jesuis_genre"/>
-              Femme
+              FEMME
             </label>
             <label for="jesuis_autre">
               <input class="sexe_jesuis champ" type="radio" value="autre" id="jesuis_autre" name="jesuis_genre"/>
-              Autre identite de genre
+              AUTRE
             </label>
           </div>
         </fieldset>
         <fieldset class="formulaire__genre__recherche sous_section_formulaire">
-          <legend>Je cherche : </legend>
+          <legend class="formulaire__soustitre">Je cherche</legend>
           <div class="jecherche_genre groupe_radio">
             <label for="jecherche_homme">
               <input class="sexe_jecherche champ" type="radio" value="homme" id="jecherche_homme" name="jecherche_genre">
-              Homme
+              HOMME
             </label>
             <label for="jecherche_femme">
               <input class="sexe_jecherche champ" type="radio" value="femme" id="jecherche_femme" name="jecherche_genre">
-              Femme
+              FEMME
             </label>
             <label for="jecherche_autre">
               <input class="sexe_jecherche champ" type="radio" value="autre" id="jecherche_autre" name="jecherche_genre">
-              Autre identite de genre
+              AUTRE
             </label>
           </div>
         </fieldset>
@@ -60,9 +72,9 @@
 
       <!-- MON PROFIL -->
       <fieldset class="formulaire__profil section_formulaire">
-        <legend class="formulaire__titre">Mon profil</legend>
+        <legend class="h2 formulaire__titre">Mon profil</legend>
         <fieldset class="formulaire__dateNaissance sous_section_formulaire groupe_date">
-          <legend>Ma date de naissance: (JJ-MM-AAAA)</legend>
+          <legend class="formulaire__soustitre">Ma date de naissance: (JJ-MM-AAAA)</legend>
           <div class="date_naissance dateNaissance">
             <div class="groupe_date__champ conteneurChamp">
               <label for="date_naissance__jour">
@@ -99,7 +111,7 @@
           </div>
         </fieldset>
         <fieldset class="formulaire__codePostal sous_section_formulaire">
-          <legend>Mon code postal : (A1A 1A1)</legend>
+          <legend class="formulaire__soustitre">Mon code postal : (A1A 1A1)</legend>
           <div class="code_postal champ_seul conteneurChamp">
             <label for="code_postal">
               Code postal
@@ -111,7 +123,7 @@
 
       <!-- MON COMPTE -->
       <fieldset class="formulaire__compte section_formulaire">
-        <legend class="formulaire__titre">Mon compte</legend>
+        <legend class="h2 formulaire__titre">Mon compte</legend>
         <div class="formulaire__compte__pseudo champ_seul conteneurChamp">
           <label for="pseudo">
             Mon nom ou pseudo :

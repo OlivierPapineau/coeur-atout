@@ -28,9 +28,9 @@ function watch(cb) {
 
             //DOIT SUPPRIMER NODE_MODULES POUR CHANGER DE PLATEFORME
             //Macos
-            //proxy: "http://localhost:8888/AUTOMNE%202019/RPNI3/EXERCICES/TP1_coeur_atout/01_travail/coeur-atout/"
+            proxy: "http://localhost:8888/AUTOMNE%202019/RPNI3/EXERCICES/TP1_coeur_atout/01_travail/coeur-atout/"
             //Windows
-            proxy: "http://localhost/AUTOMNE%202019/RPNI3/EXERCICES/TP1_coeur_atout/01_travail/coeur-atout/"
+            //proxy: "http://localhost/AUTOMNE%202019/RPNI3/EXERCICES/TP1_coeur_atout/01_travail/coeur-atout/"
         });
     });
 

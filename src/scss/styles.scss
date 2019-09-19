@@ -17,22 +17,18 @@
  *
  * ...
  */
-/*** Modules ***/
-@import 'base/general';
-//@import 'base/typo';
-
 /*** Normalize ***/
 @import '../../node_modules/normalize.scss/normalize.scss';
 
+/*** Mixins ***/
+@import "utilitaires/mixins";
+@import "utilitaires/variables";
 
 /*** Modules ***/
+@import 'base/general';
+@import 'base/typo';
 
+/*** Modules ***/
 @import 'modules/champs.scss';
 @import 'modules/formulaire.scss';
 @import 'modules/boutons';
-
-//IMPORTATIONS TEMPORAIRES
-@font-face {
-  font-family: "Product Sans";
-  src: url('https://fonts.gstatic.com/s/productsans/v7/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2') format('woff2');
-}
