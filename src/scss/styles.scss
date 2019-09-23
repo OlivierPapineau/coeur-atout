@@ -17,18 +17,19 @@
  *
  * ...
  */
-/*** Normalize ***/
-@import '../../node_modules/normalize.scss/normalize.scss';
-
 /*** Mixins ***/
 @import "utilitaires/mixins";
 @import "utilitaires/variables";
 
+/*** Normalize ***/
+@import '../../node_modules/normalize.scss/normalize.scss';
+
 /*** Modules ***/
 @import 'base/general';
 @import 'base/typo';
+@import 'base/svg';
 
 /*** Modules ***/
-@import 'modules/champs.scss';
-@import 'modules/formulaire.scss';
+@import 'modules/champs';
+@import 'modules/formulaire';
 @import 'modules/boutons';

@@ -49,3 +49,10 @@
     margin-top: 0;
   }
 }
+
+.groupe_radio {
+  &__labelRadio {
+    display: block;
+    text-align: center;
+  }
+}
