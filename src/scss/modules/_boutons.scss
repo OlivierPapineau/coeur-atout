@@ -55,4 +55,76 @@
     display: block;
     text-align: center;
   }
+
+  label {
+    //width: 100px;
+    //height: 100px;
+    display: inline-block;
+    background-image: url("../images/spritesheet.svg");
+    background-repeat: no-repeat;
+    background-size: 200px;
+  }
+
+  label[for=jesuis_homme] {
+    //left: 0;
+    width: 50px;
+    height: 50px;
+    background-position: 0 0;
+  }
+  input:checked + label[for=jesuis_homme] {
+    background-position: 0 -50px;
+  }
+
+
+  label[for=jesuis_femme] {
+    //left: 50px;
+    width: 50px;
+    height: 50px;
+    background-position: -50px 0;
+  }
+  input:checked + label[for=jesuis_femme] {
+    background-position: -50px -50px;
+  }
+
+  label[for=jesuis_autre] {
+    //left: 50px;
+    width: 50px;
+    height: 50px;
+    background-position: -100px 0;
+  }
+  input:checked + label[for=jesuis_autre] {
+    background-position: -100px -50px;
+  }
+
+
+  label[for=jecherche_homme] {
+    //left: 0;
+    width: 50px;
+    height: 50px;
+    background-position: 0 0;
+  }
+  input:checked + label[for=jecherche_homme] {
+    background-position: 0 -50px;
+  }
+
+
+  label[for=jecherche_femme] {
+    //left: 50px;
+    width: 50px;
+    height: 50px;
+    background-position: -50px 0;
+  }
+  input:checked + label[for=jecherche_femme] {
+    background-position: -50px -50px;
+  }
+
+  label[for=jecherche_autre] {
+    //left: 50px;
+    width: 50px;
+    height: 50px;
+    background-position: -100px 0;
+  }
+  input:checked + label[for=jecherche_autre] {
+    background-position: -100px -50px;
+  }
 }

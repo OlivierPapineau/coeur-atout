@@ -47,6 +47,7 @@ export class Validations {
            }
            if (element.type === "radio") {
                element.addEventListener("click", this.controlerChamp);
+               //element.addEventListener("blur", this.gererClassesRadio);
            }
            if (element.name === "date_naissance__mois") {
                element.addEventListener("change", this.controlerChamp);
@@ -80,7 +81,7 @@ export class Validations {
             elementValidation.innerHTML = this.objMessages[e.currentTarget.classList[0]].erreurs.motif;
             elementValidation.classList.add("messageInvalide");
             e.currentTarget.parentNode.parentNode.appendChild(elementValidation);
-            console.log(copieEtat.champs[e.currentTarget.classList[0]]);
+            //console.log(copieEtat.champs[e.currentTarget.classList[0]]);
         } else {
             //Si le champ est valide, change le state pour valide
             copieEtat.champs[e.currentTarget.classList[0]].estValide = true;
@@ -93,13 +94,32 @@ export class Validations {
             //Met la classe valide au champ
             e.currentTarget.classList.add("valide");
 
-            e.currentTarget.parentNode.parentNode.removeChild(elementValidation); //A fixer
-            console.log("Parent node:", e.currentTarget.parentNode.parentNode);
+            //e.currentTarget.parentNode.parentNode.removeChild(elementValidation); //A fixer
+            //console.log("Parent node:", e.currentTarget.parentNode.parentNode);
 
-            console.log(copieEtat.champs[e.currentTarget.classList[0]]);
+            //console.log(copieEtat.champs[e.currentTarget.classList[0]]);
         }
     };
 
+    // private gererClassesRadio = (e): void => {
+    //     if (e.currentTarget.type === "radio") {
+    //         console.log("pet");
+    //         console.log("Is checked: ", e.currentTarget.checked);
+    //         console.log("Contains selectionne: ", e.currentTarget.parentNode
+    //             .querySelector("svg")
+    //             .querySelector("g")
+    //             .classList.contains("selectionne"));
+    //         e.currentTarget.checked = false;
+    //
+    //         if (e.currentTarget.checked === false && e.currentTarget.parentNode.querySelector("svg").querySelector("g").classList.contains("selectionne")) {
+    //             console.log("prout");
+    //             e.currentTarget.parentNode
+    //                 .querySelector("svg")
+    //                 .querySelector("g")
+    //                 .classList.remove("selectionne");
+    //         }
+    //     }
+    // };
 
     // Méthodes utilitaires
     private controlerChamp = (e): void => {
@@ -116,6 +136,29 @@ export class Validations {
             },
         };
         console.log(this.etatFormulaire.champs[e.currentTarget.classList[0]]);
+
+        // if (e.currentTarget.type === "radio") {
+        //     //console.log(e.currentTarget);
+        //     if (e.currentTarget.checked) {
+        //         if (e.currentTarget.classList.contains("selectionne")) {
+        //             //console.log(e.currentTarget.parentNode.querySelector("svg"));
+        //             e.currentTarget.parentNode
+        //                 .querySelector("svg")
+        //                 .querySelector("g")
+        //                 .classList.remove("selectionne");
+        //
+        //             //e.currentTarget.classList.remove("selectionne");
+        //         } else {
+        //             //console.log(e.currentTarget.parentNode.querySelector("svg").querySelector("g"));
+        //             e.currentTarget.parentNode
+        //                 .querySelector("svg")
+        //                 .querySelector("g")
+        //                 .classList.add("selectionne");
+        //
+        //             //e.currentTarget.classList.add("selectionne");
+        //         }
+        //     }
+        // }
     };
 
 

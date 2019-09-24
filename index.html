@@ -37,81 +37,47 @@
         <fieldset class="formulaire__genre__monGenre sous_section_formulaire">
           <legend class="formulaire__soustitre">Je suis</legend>
           <div class="jesuis_genre groupe_radio">
-            <label for="jesuis_homme">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.95 31.36" width="75" height="75">
-                    <linearGradient id="linear-gradient-homme" x1="25.24" y1="-2.86" x2="6.48" y2="29.64" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#f08f6a"/>
-                        <stop offset="1" stop-color="#ed7198"/>
-                    </linearGradient>
-                    <g id="homme" class="homme-svg">
-                        <path class="cls-1" d="M29.37,0c-.11,0-7.9.08-7.9.08A2.7,2.7,0,0,0,19,2.84a2.7,2.7,0,0,0,2.51,2.7h0L23,5.31,20.34,7.85A12.46,12.46,0,1,0,24,11.35l3-2.83v1.76a2.51,2.51,0,1,0,5,0V2.49C32,1.82,31.84.15,29.37,0ZM18.56,24A7.93,7.93,0,0,1,7.35,24,7.94,7.94,0,0,1,13,10.45a7.84,7.84,0,0,1,5.6,2.33A7.93,7.93,0,0,1,18.56,24Z"/>
-                    </g>
-                </svg>
-                <input class="sexe_jesuis champ screen-reader-only" type="radio" value="homme" id="jesuis_homme" name="jesuis_genre"/>
-                <span class="groupe_radio__labelRadio">HOMME</span>
-            </label>
-            <label for="jesuis_femme">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.72 45.72" width="75" height="75">
-                    <linearGradient id="linear-gradient-femme" x1="36.91" y1="-2.26" x2="9.9" y2="44.52" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#f08f6a"/>
-                        <stop offset="1" stop-color="#ed7198"/>
-                    </linearGradient>
-                    <g id="femme" class="femme-svg">
-                        <path class="cls-1" d="M44.8,16.16l-5.41-5.41,4.46-4.46a3.13,3.13,0,0,0-4.42-4.42L35,6.33,29.56.92a3.13,3.13,0,0,0-4.42,4.42l5.41,5.41-5,5A16.38,16.38,0,1,0,28,40.92a16.41,16.41,0,0,0,2-20.74l5-5,5.41,5.42a3.13,3.13,0,1,0,4.42-4.42ZM23.55,36.5a10.13,10.13,0,1,1,0-14.33A10.1,10.1,0,0,1,23.55,36.5Z"/>
-                    </g>
-                </svg>
-                <input class="sexe_jesuis champ screen-reader-only" type="radio" value="femme" id="jesuis_femme" name="jesuis_genre"/>
-                <span class="groupe_radio__labelRadio">FEMME</span>
-            </label>
-            <label for="jesuis_autre">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426 426" width="75" height="75">
-                    <defs>
-                        <linearGradient id="linear-gradient-autre" y1="213" x2="426" y2="213" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#ed7198"></stop>
-                            <stop offset="1" stop-color="#f08f6a"></stop>
-                        </linearGradient>
-                    </defs>
-                    <g id="autre_genre" class="autre_genre-svg">
-                        <circle class="cls-1" cx="213" cy="213" r="213" style="fill: transparent"/>
-                        <path class="cls-2" d="M213,80a133,133,0,1,1-94,39A132.15,132.15,0,0,1,213,80m0-80C95.36,0,0,95.36,0,213S95.36,426,213,426s213-95.36,213-213S330.64,0,213,0Z"/>
-                    </g>
-                </svg>
-                <input class="sexe_jesuis champ screen-reader-only" type="radio" value="autre" id="jesuis_autre" name="jesuis_genre"/>
-                <span class="groupe_radio__labelRadio">AUTRE</span>
-            </label>
+            <div>
+              <input class="sexe_jesuis champ screen-reader-only" type="radio" value="homme" id="jesuis_homme" name="jesuis_genre" checked/>
+              <label for="jesuis_homme" aria-label="HOMME"></label>
+              <span class="groupe_radio__labelRadio">HOMME</span>
+            </div>
+<!--            <span class="groupe_radio__labelRadio">HOMME</span>-->
+            <div>
+              <input class="sexe_jesuis champ screen-reader-only" type="radio" value="femme" id="jesuis_femme" name="jesuis_genre"/>
+              <label for="jesuis_femme" aria-label="FEMME"></label>
+              <span class="groupe_radio__labelRadio">FEMME</span>
+            </div>
+
+            <div>
+              <input class="sexe_jesuis champ screen-reader-only" type="radio" value="autre" id="jesuis_autre" name="jesuis_genre"/>
+              <label for="jesuis_autre"></label>
+              <span class="groupe_radio__labelRadio">AUTRE</span>
+            </div>
+
           </div>
         </fieldset>
         <fieldset class="formulaire__genre__recherche sous_section_formulaire">
           <legend class="formulaire__soustitre">Je cherche</legend>
           <div class="jecherche_genre groupe_radio">
-            <label for="jecherche_homme">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.95 31.36" width="75" height="75">
-                    <g id="homme" class="homme-svg">
-                        <path class="cls-1" d="M29.37,0c-.11,0-7.9.08-7.9.08A2.7,2.7,0,0,0,19,2.84a2.7,2.7,0,0,0,2.51,2.7h0L23,5.31,20.34,7.85A12.46,12.46,0,1,0,24,11.35l3-2.83v1.76a2.51,2.51,0,1,0,5,0V2.49C32,1.82,31.84.15,29.37,0ZM18.56,24A7.93,7.93,0,0,1,7.35,24,7.94,7.94,0,0,1,13,10.45a7.84,7.84,0,0,1,5.6,2.33A7.93,7.93,0,0,1,18.56,24Z"/>
-                    </g>
-                </svg>
-              <input class="sexe_jecherche champ screen-reader-only" type="radio" value="homme" id="jecherche_homme" name="jecherche_genre">
+
+            <div>
+              <input class="sexe_jecherche champ screen-reader-only" type="radio" value="homme" id="jecherche_homme" name="jecherche_genre" checked>
+              <label for="jecherche_homme"></label>
               <span class="groupe_radio__labelRadio">HOMME</span>
-            </label>
-            <label for="jecherche_femme">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.72 45.72" width="75" height="75">
-                    <g id="femme" class="femme-svg">
-                        <path class="cls-1" d="M44.8,16.16l-5.41-5.41,4.46-4.46a3.13,3.13,0,0,0-4.42-4.42L35,6.33,29.56.92a3.13,3.13,0,0,0-4.42,4.42l5.41,5.41-5,5A16.38,16.38,0,1,0,28,40.92a16.41,16.41,0,0,0,2-20.74l5-5,5.41,5.42a3.13,3.13,0,1,0,4.42-4.42ZM23.55,36.5a10.13,10.13,0,1,1,0-14.33A10.1,10.1,0,0,1,23.55,36.5Z"/>
-                    </g>
-                </svg>
+            </div>
+
+            <div>
               <input class="sexe_jecherche champ screen-reader-only" type="radio" value="femme" id="jecherche_femme" name="jecherche_genre">
+              <label for="jecherche_femme"></label>
               <span class="groupe_radio__labelRadio">FEMME</span>
-            </label>
-            <label for="jecherche_autre">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426 426" width="75" height="75">
-                    <g id="autre_genre" class="autre_genre-svg">
-                        <circle class="cls-1" cx="213" cy="213" r="213" style="fill: transparent"/>
-                        <path class="cls-2" d="M213,80a133,133,0,1,1-94,39A132.15,132.15,0,0,1,213,80m0-80C95.36,0,0,95.36,0,213S95.36,426,213,426s213-95.36,213-213S330.64,0,213,0Z"/>
-                    </g>
-                </svg>
+            </div>
+
+            <div>
               <input class="sexe_jecherche champ screen-reader-only" type="radio" value="autre" id="jecherche_autre" name="jecherche_genre">
+              <label for="jecherche_autre"></label>
               <span class="groupe_radio__labelRadio">AUTRE</span>
-            </label>
+            </div>
           </div>
         </fieldset>
       </fieldset>
