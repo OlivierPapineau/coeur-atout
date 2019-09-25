@@ -2,8 +2,8 @@
  * @author: Olivier Papineau
  * @email: olivier.12.papineau@gmail.com
  */
-import { IEtatFormulaire } from './typages/interfaces';
-import { initialiserEtat } from "./utilitaires/initialiserEtat";
+import {IEtatFormulaire} from './typages/interfaces';
+import {initialiserEtat} from "./utilitaires/initialiserEtat";
 
 export class Validations {
 
@@ -16,6 +16,7 @@ export class Validations {
     private refArrElements: HTMLInputElement[] = Array.apply(null, document.querySelectorAll('.champ'));
 
     private etatFormulaire = initialiserEtat();
+
     // Constructeur
     constructor(objJSON?: JSON) {
 
@@ -31,57 +32,134 @@ export class Validations {
     //Initialisation des ecouteurs d'evenements
     private initialiser = (): void => {
         this.refarrJeSuis.forEach(element => {
-           element.addEventListener("blur", this.valider);
+            element.addEventListener("blur", this.valider);
         });
 
         // Ajout d'ecouteurs d'evenements par type de champ
         this.refArrElements.forEach(element => {
-           element.addEventListener("blur", this.valider);
-           if (
-               element.type === "text" ||
-               element.type === "number" ||
-               element.type === "email" ||
-               element.type === "password") {
-               element.addEventListener("keyup", this.controlerChamp);
-               element.addEventListener("change", this.controlerChamp);
-           }
-           if (element.type === "radio") {
-               element.addEventListener("click", this.controlerChamp);
-               //element.addEventListener("blur", this.gererClassesRadio);
-           }
-           if (element.name === "date_naissance__mois") {
-               element.addEventListener("change", this.controlerChamp);
-           }
+            element.addEventListener("blur", this.valider);
+            if (
+                element.type === "text" ||
+                element.type === "number" ||
+                element.type === "email" ||
+                element.type === "password") {
+                element.addEventListener("keyup", this.controlerChamp);
+                element.addEventListener("change", this.controlerChamp);
+            }
+            if (element.type === "radio") {
+                element.addEventListener("click", this.controlerChamp);
+                //element.addEventListener("blur", this.gererClassesRadio);
+            }
+            if (element.name === "date_naissance__mois") {
+                element.addEventListener("change", this.controlerChamp);
+            }
         });
         console.table(this.objMessages);
     };
 
     /*
-    * @TODO Faire un clean up des e.currentTarget + faire fonctionner la suppression des messages d'erreur
+    * @METHOD valider
+    * @Params: e -> evenement
+    * Valide la valeur au "blur" du champp courant et met a jour son etat de validation
+    * dans l'objet d'etat
+    *
+    * @return void
     * */
     // Méthodes de validation
     private valider = (e) => {
         let copieEtat = {...this.etatFormulaire};
-        const elementValidation = document.createElement("P");
-
-        //console.log("copieEtat: ", copieEtat);
-        //console.log(e.currentTarget);
-        //console.log(e.currentTarget.pattern);
         const regexChamp = new RegExp(e.currentTarget.pattern);
         console.log("regex: ", regexChamp);
 
-        if (!e.currentTarget.value.match(regexChamp)) {
+        //Si le champ fait partie des champs DATE
+        if (e.currentTarget.classList[0].indexOf("dateNaissance") > -1) {
+            //console.log("Ceci est un champ de date");
+            switch (e.currentTarget.classList[0]) {
+                case "dateNaissance__jour":
+                    console.log("Champ jour");
+                    console.log(e.currentTarget.classList[0]);
+                    //Si le champ possede une valeur fautive
+                    if (!e.currentTarget.value) {
+                        //Le mettre invalide dans l'etat
+                        copieEtat.champs[e.currentTarget.classList[0]].estValide = false;
+                        //Lui mettre la classe invalide
+                        e.currentTarget.classList.add("invalide");
+                        //Ajouter le message d'erreur correspondant a son champ dans le paragraphe d'erreur
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`).innerHTML = this.objMessages["dateNaissance"].erreurs.type.jour;
+                        //Ajouter la classe de message invalide
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`).classList.add("messageInvalide");
+                    } else { //Si le champ possede une valeur valide
+                        //Mettre son etat a valide
+                        copieEtat.champs[e.currentTarget.classList[0]].estValide = true;
+                        //Si la classe invalide existe dessus, l'enlever
+                        if (e.currentTarget.classList.contains("invalide")) {
+                            e.currentTarget.classList.remove("invalide");
+                        }
+                        //Lui mettre la classe valide
+                        e.currentTarget.classList.add("valide");
+
+                        //Enlever le message d'erreur
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                            .innerHTML = "";
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                            .classList.remove("messageInvalide");
+                    }
+                    break;
+                case "dateNaissance__mois":
+                    console.log("Champ mois");
+                    if (this.etatFormulaire.champs[e.currentTarget.classList[0]].valeur === "") {
+                        copieEtat.champs[e.currentTarget.classList[0]].estValide = false;
+                        e.currentTarget.classList.add("invalide");
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`).innerHTML = this.objMessages["dateNaissance"].erreurs.type.mois;
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`).classList.add("messageInvalide");
+                    } else {
+                        copieEtat.champs[e.currentTarget.classList[0]].estValide = true;
+                        if (e.currentTarget.classList.contains("invalide")) {
+                            e.currentTarget.classList.remove("invalide");
+                        }
+                        e.currentTarget.classList.add("valide");
+
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                            .innerHTML = "";
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                            .classList.remove("messageInvalide");
+                    }
+                    break;
+                case "dateNaissance__annee":
+                    console.log("Champ annee");
+                    if (!e.currentTarget.value) {
+                        copieEtat.champs[e.currentTarget.classList[0]].estValide = false;
+                        e.currentTarget.classList.add("invalide");
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`).innerHTML = this.objMessages["dateNaissance"].erreurs.type.annee;
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`).classList.add("messageInvalide");
+                    } else {
+                        copieEtat.champs[e.currentTarget.classList[0]].estValide = true;
+                        if (e.currentTarget.classList.contains("invalide")) {
+                            e.currentTarget.classList.remove("invalide");
+                        }
+                        e.currentTarget.classList.add("valide");
+
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                            .innerHTML = "";
+                        document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                            .classList.remove("messageInvalide");
+                    }
+                    break;
+            }
+        //Si le champ est d'un autre type et que sa valeur correspond a son expression reguliere
+        } else if (!e.currentTarget.value.match(regexChamp)) {
             //Si le champ est invalide, change le state pour invalide
             copieEtat.champs[e.currentTarget.classList[0]].estValide = false;
 
             //Met la classe invalide au champ
             e.currentTarget.classList.add("invalide");
 
-            //Chargement du message de validation
-            elementValidation.innerHTML = this.objMessages[e.currentTarget.classList[0]].erreurs.motif;
-            elementValidation.classList.add("messageInvalide");
-            e.currentTarget.parentNode.parentNode.appendChild(elementValidation);
-            //console.log(copieEtat.champs[e.currentTarget.classList[0]]);
+            //Fait apparaitre le message d'erreur
+            document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                .innerHTML = this.objMessages[e.currentTarget.classList[0]].erreurs.motif;
+            document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                .classList.add("messageInvalide");
+
         } else {
             //Si le champ est valide, change le state pour valide
             copieEtat.champs[e.currentTarget.classList[0]].estValide = true;
@@ -94,32 +172,17 @@ export class Validations {
             //Met la classe valide au champ
             e.currentTarget.classList.add("valide");
 
-            //e.currentTarget.parentNode.parentNode.removeChild(elementValidation); //A fixer
-            //console.log("Parent node:", e.currentTarget.parentNode.parentNode);
-
-            //console.log(copieEtat.champs[e.currentTarget.classList[0]]);
+            //Fait disparaitre le message d'erreur
+            document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                .innerHTML = "";
+            document.getElementById(`${e.currentTarget.classList[0]}--message`)
+                .classList.remove("messageInvalide");
         }
     };
 
-    // private gererClassesRadio = (e): void => {
-    //     if (e.currentTarget.type === "radio") {
-    //         console.log("pet");
-    //         console.log("Is checked: ", e.currentTarget.checked);
-    //         console.log("Contains selectionne: ", e.currentTarget.parentNode
-    //             .querySelector("svg")
-    //             .querySelector("g")
-    //             .classList.contains("selectionne"));
-    //         e.currentTarget.checked = false;
-    //
-    //         if (e.currentTarget.checked === false && e.currentTarget.parentNode.querySelector("svg").querySelector("g").classList.contains("selectionne")) {
-    //             console.log("prout");
-    //             e.currentTarget.parentNode
-    //                 .querySelector("svg")
-    //                 .querySelector("g")
-    //                 .classList.remove("selectionne");
-    //         }
-    //     }
-    // };
+    private changerSection = () => {
+
+    };
 
     // Méthodes utilitaires
     private controlerChamp = (e): void => {
@@ -136,29 +199,6 @@ export class Validations {
             },
         };
         console.log(this.etatFormulaire.champs[e.currentTarget.classList[0]]);
-
-        // if (e.currentTarget.type === "radio") {
-        //     //console.log(e.currentTarget);
-        //     if (e.currentTarget.checked) {
-        //         if (e.currentTarget.classList.contains("selectionne")) {
-        //             //console.log(e.currentTarget.parentNode.querySelector("svg"));
-        //             e.currentTarget.parentNode
-        //                 .querySelector("svg")
-        //                 .querySelector("g")
-        //                 .classList.remove("selectionne");
-        //
-        //             //e.currentTarget.classList.remove("selectionne");
-        //         } else {
-        //             //console.log(e.currentTarget.parentNode.querySelector("svg").querySelector("g"));
-        //             e.currentTarget.parentNode
-        //                 .querySelector("svg")
-        //                 .querySelector("g")
-        //                 .classList.add("selectionne");
-        //
-        //             //e.currentTarget.classList.add("selectionne");
-        //         }
-        //     }
-        // }
     };
 
 

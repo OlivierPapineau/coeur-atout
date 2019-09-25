@@ -2,201 +2,223 @@
 <html lang="fr">
 <head>
 
-  <meta charset="utf-8"/>
-  <title>Coeur Atout - Jouer la carte romantique</title>
-  <meta name="viewport" content="width=device-width"/>
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
+    <meta charset="utf-8"/>
+    <title>Coeur Atout - Jouer la carte romantique</title>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
 
 </head>
 <body>
 
-  <header>
-<!--    <p class="h1">Coeur Atout</p>-->
+<header>
+    <!--    <p class="h1">Coeur Atout</p>-->
     <img class="logo" src="assets/images/logo_coeuratout_mini.svg" alt="Coeur Atout - Jouer la carte romantique">
-<!--    <p>Jouer la carte romantique</p>-->
+    <!--    <p>Jouer la carte romantique</p>-->
     <button class="bouton_inscription" type="button">S'INSCRIRE</button>
-  </header>
+</header>
 
-  <main class="conteneur">
+<main class="conteneur">
     <h1 class="titre">INSCRIPTION</h1>
     <form class="formulaire">
-      <div class="formulaire__etapes">
-        <div class="formulaire__etapes__bulle bulle-active">
-          <span class="formulaire__etapes__monGenre">1. MON GENRE</span>
-        </div>
-        <div class="formulaire__etapes__bulle">
-          <span class="formulaire__etapes__monProfil">2. MON PROFIL</span>
-        </div>
-        <div class="formulaire__etapes__bulle">
-          <span class="formulaire__etapes__monCompte">3. MON COMPTE</span>
-        </div>
-      </div>
-      <!-- MON GENRE -->
-      <fieldset class="formulaire__genre section_formulaire">
-        <legend class="h2 formulaire__titre">Mon genre</legend>
-        <fieldset class="formulaire__genre__monGenre sous_section_formulaire">
-          <legend class="formulaire__soustitre">Je suis</legend>
-          <div class="jesuis_genre groupe_radio">
-            <div>
-              <input class="sexe_jesuis champ screen-reader-only" type="radio" value="homme" id="jesuis_homme" name="jesuis_genre" checked/>
-              <label for="jesuis_homme" aria-label="HOMME"></label>
-              <span class="groupe_radio__labelRadio">HOMME</span>
+        <div class="formulaire__etapes">
+            <div class="formulaire__etapes__bulle bulle-active">
+                <span class="formulaire__etapes__monGenre">1. MON GENRE</span>
             </div>
-<!--            <span class="groupe_radio__labelRadio">HOMME</span>-->
-            <div>
-              <input class="sexe_jesuis champ screen-reader-only" type="radio" value="femme" id="jesuis_femme" name="jesuis_genre"/>
-              <label for="jesuis_femme" aria-label="FEMME"></label>
-              <span class="groupe_radio__labelRadio">FEMME</span>
+            <div class="formulaire__etapes__bulle">
+                <span class="formulaire__etapes__monProfil">2. MON PROFIL</span>
             </div>
+            <div class="formulaire__etapes__bulle">
+                <span class="formulaire__etapes__monCompte">3. MON COMPTE</span>
+            </div>
+        </div>
+        <!-- MON GENRE -->
+        <fieldset class="formulaire__genre section_formulaire">
+            <legend class="h2 formulaire__titre">Mon genre</legend>
+            <fieldset class="formulaire__genre__monGenre sous_section_formulaire">
+                <legend class="formulaire__soustitre">Je suis</legend>
+                <div class="jesuis_genre groupe_radio">
+                    <div>
+                        <input class="sexe_jesuis champ screen-reader-only" type="radio" value="homme" id="jesuis_homme"
+                               name="jesuis_genre" checked/>
+                        <label for="jesuis_homme" aria-label="HOMME"></label>
+                        <span class="groupe_radio__labelRadio">HOMME</span>
+                    </div>
+                    <!--            <span class="groupe_radio__labelRadio">HOMME</span>-->
+                    <div>
+                        <input class="sexe_jesuis champ screen-reader-only" type="radio" value="femme" id="jesuis_femme"
+                               name="jesuis_genre"/>
+                        <label for="jesuis_femme" aria-label="FEMME"></label>
+                        <span class="groupe_radio__labelRadio">FEMME</span>
+                    </div>
 
-            <div>
-              <input class="sexe_jesuis champ screen-reader-only" type="radio" value="autre" id="jesuis_autre" name="jesuis_genre"/>
-              <label for="jesuis_autre"></label>
-              <span class="groupe_radio__labelRadio">AUTRE</span>
-            </div>
+                    <div>
+                        <input class="sexe_jesuis champ screen-reader-only" type="radio" value="autre" id="jesuis_autre"
+                               name="jesuis_genre"/>
+                        <label for="jesuis_autre"></label>
+                        <span class="groupe_radio__labelRadio">AUTRE</span>
+                    </div>
 
-          </div>
+                </div>
+            </fieldset>
+            <fieldset class="formulaire__genre__recherche sous_section_formulaire">
+                <legend class="formulaire__soustitre">Je cherche</legend>
+                <div class="jecherche_genre groupe_radio">
+
+                    <div>
+                        <input class="sexe_jecherche champ screen-reader-only" type="radio" value="homme"
+                               id="jecherche_homme" name="jecherche_genre" checked>
+                        <label for="jecherche_homme"></label>
+                        <span class="groupe_radio__labelRadio">HOMME</span>
+                    </div>
+
+                    <div>
+                        <input class="sexe_jecherche champ screen-reader-only" type="radio" value="femme"
+                               id="jecherche_femme" name="jecherche_genre">
+                        <label for="jecherche_femme"></label>
+                        <span class="groupe_radio__labelRadio">FEMME</span>
+                    </div>
+
+                    <div>
+                        <input class="sexe_jecherche champ screen-reader-only" type="radio" value="autre"
+                               id="jecherche_autre" name="jecherche_genre">
+                        <label for="jecherche_autre"></label>
+                        <span class="groupe_radio__labelRadio">AUTRE</span>
+                    </div>
+                </div>
+            </fieldset>
         </fieldset>
-        <fieldset class="formulaire__genre__recherche sous_section_formulaire">
-          <legend class="formulaire__soustitre">Je cherche</legend>
-          <div class="jecherche_genre groupe_radio">
 
-            <div>
-              <input class="sexe_jecherche champ screen-reader-only" type="radio" value="homme" id="jecherche_homme" name="jecherche_genre" checked>
-              <label for="jecherche_homme"></label>
-              <span class="groupe_radio__labelRadio">HOMME</span>
-            </div>
+        <!-- MON PROFIL -->
+        <fieldset class="formulaire__profil section_formulaire">
+            <legend class="h2 formulaire__titre">Mon profil</legend>
+            <fieldset class="formulaire__dateNaissance sous_section_formulaire groupe_date">
+                <legend class="formulaire__soustitre">Ma date de naissance: (JJ-MM-AAAA)</legend>
+                <div class="date_naissance dateNaissance">
+                    <div class="groupe_date__champ conteneurChamp">
+                        <label for="date_naissance__jour">
+                            Jour
+                            <input class="dateNaissance__jour champ conteneurChamp__champ" type="number" max="31"
+                                   id="date_naissance__jour" required>
+                        </label>
+                        <p id="dateNaissance__jour--message"></p>
+                    </div>
+                    <div class="groupe_date__champ conteneurChamp">
+                        <label for="date_naissance__mois">
+                            Mois
+                            <select class="dateNaissance__mois champ conteneurChamp__champ" name="date_naissance__mois"
+                                    id="date_naissance__mois" required>
+                                <option value="01">Janvier</option>
+                                <option value="02">Fevrier</option>
+                                <option value="03">Mars</option>
+                                <option value="04">Avril</option>
+                                <option value=05>Mai</option>
+                                <option value="06">Juin</option>
+                                <option value="07">Janvier</option>
+                                <option value="08">Aout</option>
+                                <option value="09">Septembre</option>
+                                <option value="10">Octobre</option>
+                                <option value="11">Novembre</option>
+                                <option value="12">Decembre</option>
+                            </select>
+                        </label>
+                        <p id="dateNaissance__mois--message"></p>
+                    </div>
+                    <div class="groupe_date__champ conteneurChamp">
+                        <label for="date_naissance__annee">
+                            Annee
+                            <input class="dateNaissance__annee champ conteneurChamp__champ" type="number" max="2019"
+                                   id="date_naissance__annee" required>
+                        </label>
+                        <p id="dateNaissance__annee--message"></p>
+                    </div>
 
-            <div>
-              <input class="sexe_jecherche champ screen-reader-only" type="radio" value="femme" id="jecherche_femme" name="jecherche_genre">
-              <label for="jecherche_femme"></label>
-              <span class="groupe_radio__labelRadio">FEMME</span>
-            </div>
-
-            <div>
-              <input class="sexe_jecherche champ screen-reader-only" type="radio" value="autre" id="jecherche_autre" name="jecherche_genre">
-              <label for="jecherche_autre"></label>
-              <span class="groupe_radio__labelRadio">AUTRE</span>
-            </div>
-          </div>
+                </div>
+            </fieldset>
+            <fieldset class="formulaire__codePostal sous_section_formulaire">
+                <legend class="formulaire__soustitre">Mon code postal : (A1A 1A1)</legend>
+                <div class="code_postal champ_seul conteneurChamp">
+                    <label for="code_postal">
+                        Code postal
+                        <input class="codePostal champ conteneurChamp__champ" type="text" id="code_postal" required
+                               pattern="^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$">
+                    </label>
+                    <p id="codePostal--message"></p>
+                </div>
+            </fieldset>
         </fieldset>
-      </fieldset>
 
-      <!-- MON PROFIL -->
-      <fieldset class="formulaire__profil section_formulaire">
-        <legend class="h2 formulaire__titre">Mon profil</legend>
-        <fieldset class="formulaire__dateNaissance sous_section_formulaire groupe_date">
-          <legend class="formulaire__soustitre">Ma date de naissance: (JJ-MM-AAAA)</legend>
-          <div class="date_naissance dateNaissance">
-            <div class="groupe_date__champ conteneurChamp">
-              <label for="date_naissance__jour">
-                Jour
-                <input class="dateNaissance__jour champ conteneurChamp__champ" type="number" max="31" id="date_naissance__jour" required>
-              </label>
+        <!-- MON COMPTE -->
+        <fieldset class="formulaire__compte section_formulaire">
+            <legend class="h2 formulaire__titre">Mon compte</legend>
+            <div class="formulaire__compte__pseudo champ_seul conteneurChamp">
+                <label for="pseudo">
+                    Mon nom ou pseudo :
+                    <input class="pseudo champ conteneurChamp__champ" type="text" id="pseudo" required
+                           pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
+                </label>
+                <p id="pseudo--message"></p>
             </div>
-            <div class="groupe_date__champ conteneurChamp">
-              <label for="date_naissance__mois">
-                Mois
-                <select class="dateNaissance__mois champ conteneurChamp__champ" name="date_naissance__mois" id="date_naissance__mois" required>
-                  <option value="01">Janvier</option>
-                  <option value="02">Fevrier</option>
-                  <option value="03">Mars</option>
-                  <option value="04">Avril</option>
-                  <option value=05>Mai</option>
-                  <option value="06">Juin</option>
-                  <option value="07">Janvier</option>
-                  <option value="08">Aout</option>
-                  <option value="09">Septembre</option>
-                  <option value="10">Octobre</option>
-                  <option value="11">Novembre</option>
-                  <option value="12">Decembre</option>
-                </select>
-              </label>
+            <div class="formulaire__compte__courriel champ_seul conteneurChamp">
+                <label for="courriel" aria-describedby="desc_courriel">
+                    Mon courriel :
+                    <input class="courriel champ conteneurChamp__champ" type="email" id="courriel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    <small id="desc_courriel">Votre courriel de sera pas devoile</small>
+                </label>
+                <p id="courriel--message"></p>
             </div>
-            <div class="groupe_date__champ conteneurChamp">
-              <label for="date_naissance__annee">
-                Annee
-                <input class="dateNaissance__annee champ conteneurChamp__champ" type="number" max="2019" id="date_naissance__annee" required>
-              </label>
+            <div class="formulaire__compte__motPasse champ_seul conteneurChamp">
+                <label for="mot_de_passe" aria-labelledby="desc_motPasse">
+                    Mot de passe
+                    <input class="motDePasse champ conteneurChamp__champ" type="password" id="mot_de_passe" required
+                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})">
+                    <small id="desc_motPasse">Entre 6 et 10 caractères, lettres minuscule et majuscule et chiffre
+                        obligatoire.</small>
+                </label>
+                <p id="motDePasse--message"></p>
             </div>
-
-          </div>
+            <div class="formulaire__compte__afficherMdp">
+                <label for="afficher_mdp">
+                    <input class="basculeTypeMotDePasse champ" type="checkbox" id="afficher_mdp">
+                    Afficher le mot de passe
+                </label>
+                <p id="basculeTypeMotDePasse--message"></p>
+            </div>
+            <div class="formulaire__compte__conditions">
+                <label for="conditions">
+                    <input class="termesUtilisation champ" type="checkbox" id="conditions" required>
+                    J'ai lu et j'accepte les conditions d'utilisation et la politique de confidentialité du réseau Cœur
+                    Atout.
+                </label>
+                <p id="termesUtilisation--message"></p>
+            </div>
         </fieldset>
-        <fieldset class="formulaire__codePostal sous_section_formulaire">
-          <legend class="formulaire__soustitre">Mon code postal : (A1A 1A1)</legend>
-          <div class="code_postal champ_seul conteneurChamp">
-            <label for="code_postal">
-              Code postal
-              <input class="codePostal champ conteneurChamp__champ" type="text" id="code_postal" required pattern="^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$">
-            </label>
-          </div>
-        </fieldset>
-      </fieldset>
 
-      <!-- MON COMPTE -->
-      <fieldset class="formulaire__compte section_formulaire">
-        <legend class="h2 formulaire__titre">Mon compte</legend>
-        <div class="formulaire__compte__pseudo champ_seul conteneurChamp">
-          <label for="pseudo">
-            Mon nom ou pseudo :
-            <input class="pseudo champ conteneurChamp__champ" type="text" id="pseudo" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
-          </label>
-        </div>
-        <div class="formulaire__compte__courriel champ_seul conteneurChamp">
-          <label for="courriel" aria-describedby="desc_courriel">
-            Mon courriel :
-            <input class="courriel champ conteneurChamp__champ" type="email" id="courriel" required>
-            <small id="desc_courriel">Votre courriel de sera pas devoile</small>
-          </label>
-        </div>
-        <div class="formulaire__compte__motPasse champ_seul conteneurChamp">
-          <label for="mot_de_passe" aria-labelledby="desc_motPasse">
-            Mot de passe
-            <input class="motDePasse champ conteneurChamp__champ" type="password" id="mot_de_passe" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})
-            ">
-            <small id="desc_motPasse">Entre 6 et 10 caractères, lettres minuscule et majuscule et chiffre obligatoire.</small>
-          </label>
-        </div>
-        <div class="formulaire__compte__afficherMdp">
-          <label for="afficher_mdp">
-            <input class="basculeTypeMotDePasse champ" type="checkbox" id="afficher_mdp">
-            Afficher le mot de passe
-          </label>
-        </div>
-        <div class="formulaire__compte__conditions">
-          <label for="conditions">
-            <input class="termesUtilisation champ" type="checkbox" id="conditions" required>
-            J'ai lu et j'accepte les conditions d'utilisation et la politique de confidentialité du réseau Cœur Atout.
-          </label>
-        </div>
-      </fieldset>
-
-      <button type="submit" class="bouton bouton_soumission">M'inscrire</button>
+        <button type="submit" class="bouton bouton_soumission">M'inscrire</button>
 
     </form>
-  <!-- FORMULAIRE À CRÉER-->
+    <!-- FORMULAIRE À CRÉER-->
 
-  </main>
+</main>
 
-  <footer>
+<footer>
     <small>Tous droits réservés à Coeur Atout Inc. Dernière mise à jour - septembre 2018.</small>
-  </footer>
+</footer>
 
 
-  <!-- CDN v2018 -->
-  <!--  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-          crossorigin="anonymous"></script>-->
+<!-- CDN v2018 -->
+<!--  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>-->
 
-  <!-- ALT au CDN: chargement local de la version installée avec Bower -->
-  <!--<script>window.jQuery || document.write('<script src="../bower_components/jquery/dist/jquery.min.js">\x3C/script>')</script>-->
+<!-- ALT au CDN: chargement local de la version installée avec Bower -->
+<!--<script>window.jQuery || document.write('<script src="../bower_components/jquery/dist/jquery.min.js">\x3C/script>')</script>-->
 
-  <!-- Chargement de objMessages, l'objet json des messages d'erreurs -->
-  <!-- <script src="./assets/js/objMessages.json"></script> -->
+<!-- Chargement de objMessages, l'objet json des messages d'erreurs -->
+<!-- <script src="./assets/js/objMessages.json"></script> -->
 
-  <!-- On importe toutes les classes de l'application et on instancie l'application dans app.js. -->
-  <script src="./node_modules/requirejs/require.js" data-main="assets/js/app.js"></script>
-  <script src="assets/js/app.js"></script>
+<!-- On importe toutes les classes de l'application et on instancie l'application dans app.js. -->
+<script src="./node_modules/requirejs/require.js" data-main="assets/js/app.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 </html>

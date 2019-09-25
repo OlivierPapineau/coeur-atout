@@ -65,6 +65,7 @@
         "erreurs": {
             "vide": "Veuillez définir votre mot de passe.",
             "base": "Pour renforcer la sécurité de votre mot de passe: \n",
+            "motif": "Veuillez saisir un mot de passe valide, comprenant entre 6 et 10 caractères, au moins une lettre majuscule, minuscule et un chiffre.",
             "type": {
                 "size": "\t  -  saisissez entre 6 et 10 caractères\n",
                 "minus": "\t  -  ajoutez au moins une minuscule\n",

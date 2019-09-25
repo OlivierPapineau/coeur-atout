@@ -24,6 +24,10 @@
 .groupe_radio {
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: $tablettePortrait) {
+    justify-content: space-around;
+  }
 }
 
 .champ_seul {
