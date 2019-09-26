@@ -1,3 +1,23 @@
+.bouton {
+  background: linear-gradient(90deg, #F08F6A 0%, #ED7198 100.13%);
+  /* component_blur */
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.65);
+  border-radius: 50px;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+}
+
+.bouton.desactive {
+  background: rgba(75, 75, 75, 0.66) !important;
+  color: white !important;
+}
+
+.boutons_controle {
+  display: flex;
+  justify-content: space-between;
+}
+
 .bouton_soumission {
   background: linear-gradient(90deg, #F08F6A 0%, #ED7198 100.13%);
   /* component_blur */
